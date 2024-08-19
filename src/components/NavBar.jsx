@@ -4,7 +4,7 @@ import avatarUrl from '../assets/images/avatar.jpeg';
 
 import './NavBar.css';
 
-export function Avatar() {
+export function Avatar({isFlipped}) {
   return <div className="avatar w-1/3">
     <img className="rounded-full w-full aspect-square grayscale"
       src={avatarUrl}
@@ -69,12 +69,12 @@ const animation = {
 }
 
 export function MobileMenu({activeSection}) {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
       <AnimatePresence>
-        <div className="lg:hidden absolute left-0 top-0 transition-all lg:hidden flex w-full h-12 px-8 justify-end items-end">
+        <div className="lg:hidden absolute left-0 top-0 transition-all lg:hidden flex w-full h-12 p-8 justify-end">
           <div className="text-black text-2xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <i className="fi fi-sr-menu-burger"></i>
           </div>
@@ -86,20 +86,20 @@ export function MobileMenu({activeSection}) {
               </div>
               <motion.div
                 key="navmenu"
-                className="lg:hidden absolute bg-white right-0 top-0 min-w-xs max-w-xs h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar py-8"
+                className="lg:hidden absolute bg-white right-0 top-0 min-w-xs max-w-xs h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar"
                 variants={animation}
                 initial="initial"
                 animate="animate"
                 exit="initial"
                 transition={animation.transition}
               >
-                <div className="close-modal w-full h-12 flex flex-col justify-end items-end px-8">
+                <div className="close-modal w-full h-12 flex flex-col items-end p-8">
                   <div className="text-black text-xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                     <i class="fi fi-sr-cross"></i>
                   </div>
                 </div>
                 <div className="flex flex-col h-full justify-center items-center py-36 gap-16">
-                  <Avatar />
+                  <Avatar isFlipped={true}/>
                   <NavItems activeSection={activeSection} onLinkClick={() => setIsMenuOpen(false)} />
                   <Footer />
                 </div>
@@ -116,7 +116,7 @@ export function NavBar({ activeSection }) {
   return (
     <>
       <div className="hidden lg:flex flex-col w-1/3 h-full bg-white justify-center items-center py-36 gap-16">
-        <Avatar />
+        <Avatar isFlipped={false}/>
         <NavItems activeSection={activeSection} />
         <Footer />
       </div>
