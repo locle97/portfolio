@@ -9,6 +9,7 @@ import { Portfolio } from './pages/Portfolio';
 import { Contact } from './pages/Contact';
 import { Projects } from './pages/Projects';
 import { About } from './pages/About';
+import { routing } from './routing';
 
 import './App.css'
 
@@ -34,6 +35,15 @@ function App() {
     };
 
     ref.current.addEventListener('scroll', handleScroll);
+    // Catch the initial hash id to navigate to the correct section
+    if (window.location.hash) {
+      const sectionId = window.location.hash.slice(1);
+      if (routing.map(t => t.id).includes(sectionId)) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        setActiveSection(sectionId);
+      }
+    }
+
     return () => ref.current.removeEventListener('scroll', handleScroll);
   }, []);
 

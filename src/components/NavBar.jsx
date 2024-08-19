@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import avatarUrl from '../assets/images/avatar.jpeg';
+import { routing } from '../routing';
 
 import './NavBar.css';
 
@@ -13,13 +14,7 @@ export function Avatar({isFlipped}) {
 }
 
 export function NavItems({ activeSection, onLinkClick }) {
-  const navItems = [
-    { id: "home", name: "Home", link: "#home" },
-    { id: "about", name: "About", link: "#about" },
-    { id: "projects", name: "Projects", link: "#projects" },
-    { id: "portfolio", name: "Portfolio", link: "#portfolio" },
-    { id: "contact", name: "Contact", link: "#contact" },
-  ];
+  const navItems = routing;
 
   return (
     <>
