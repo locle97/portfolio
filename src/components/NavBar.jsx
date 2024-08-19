@@ -69,7 +69,7 @@ export function MobileMenu({activeSection}) {
   return (
     <>
       <AnimatePresence>
-        <div className="lg:hidden absolute left-0 top-0 transition-all lg:hidden flex w-full h-12 p-8 justify-end">
+        <div className="z-50 lg:hidden absolute left-0 top-0 transition-all lg:hidden flex w-full h-12 p-8 justify-end">
           <div className="text-black text-2xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <i className="fi fi-sr-menu-burger"></i>
           </div>
@@ -77,11 +77,11 @@ export function MobileMenu({activeSection}) {
         {isMenuOpen &&
           (
             <>
-              <div className="lg:hidden absolute w-full h-full bg-gray-700 opacity-50" onClick={() => setIsMenuOpen(false)}>
+              <div className="z-50 lg:hidden absolute w-full h-full bg-gray-700 opacity-50" onClick={() => setIsMenuOpen(false)}>
               </div>
               <motion.div
                 key="navmenu"
-                className="lg:hidden absolute bg-white right-0 top-0 min-w-xs max-w-xs h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar"
+                className="z-50 lg:hidden absolute bg-white right-0 top-0 min-w-xs max-w-xs h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar"
                 variants={animation}
                 initial="initial"
                 animate="animate"
