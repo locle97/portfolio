@@ -1,5 +1,4 @@
 import avatarUrl from '../assets/images/avatar.jpeg';
-import { NavLink } from 'react-router-dom';
 
 import './NavBar.css';
 
@@ -11,13 +10,13 @@ export function Avatar() {
   </div>;
 }
 
-export function NavItems() {
+export function NavItems({activeSection}) {
   const navItems = [
-    { name: "Home", link: "/"},
-    { name: "About", link: "/about"},
-    { name: "Projects", link: "/projects"},
-    { name: "Portfolio", link: "/portfolio"},
-    { name: "Contact", link: "/contact"},
+    { id: "home", name: "Home", link: "#home"},
+    { id: "about", name: "About", link: "#about"},
+    { id: "projects", name: "Projects", link: "#projects"},
+    { id: "portfolio", name: "Portfolio", link: "#portfolio"},
+    { id: "contact", name: "Contact", link: "#contact"},
   ];
 
   return (
@@ -25,7 +24,7 @@ export function NavItems() {
       <ul id="navlinks" className="flex flex-col items-center gap-4">
         {navItems.map((item, index) => (
           <li key={index} className="hover:text-gray-700">
-            <NavLink to={item.link}>{item.name}</NavLink>
+            <a className={ activeSection === item.id ? "active" : ""} href={item.link}>{item.name}</a>
           </li>
         ))}
       </ul>
@@ -61,12 +60,12 @@ export function Footer() {
   );
 }
 
-export function NavBar() {
+export function NavBar({activeSection}) {
   return (
     <>
       <div className="flex flex-col w-1/3 h-full bg-white justify-center items-center py-36 gap-16">
         <Avatar />
-        <NavItems />
+        <NavItems activeSection={activeSection}/>
         <Footer />
       </div>
     </>

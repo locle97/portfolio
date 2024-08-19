@@ -1,11 +1,11 @@
-import AnimatedPage from "../components/AnimatedPage";
+import Page from "../components/AnimatedPage";
 
 export function Portfolio() {
   return (
     <>
-      <AnimatedPage>
-        <h1 id="portfolio" className="text-6xl text-black font-bold">Portfolio</h1>
-      </AnimatedPage>
+      <Page id="portfolio">
+        <h1 className="text-6xl text-black font-bold">Portfolio</h1>
+      </Page>
     </>
   );
 }
