@@ -1,4 +1,4 @@
-import avatarUrl from './assets/images/avatar.jpeg';
+import avatarUrl from '../assets/images/avatar.jpeg';
 import { NavLink } from 'react-router-dom';
 
 import './NavBar.css';
