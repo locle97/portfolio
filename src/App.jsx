@@ -57,8 +57,8 @@ function App() {
       />
       <div className="wrapper absolute w-screen h-screen z-10 bg-gray-200">
       </div>
-      <div className="flex absolute w-screen h-screen z-20 justify-center items-center text-gray-400">
-        <div className="flex gap-8 w-[80%] h-[80%]">
+      <div className="flex flex-col lg:flex absolute w-screen h-screen z-20 justify-center items-center text-gray-400">
+        <div className="transition-all flex flex-col lg:flex-row gap-8 w-full h-full lg:w-[80%] lg:h-[80%]">
           <NavBar activeSection={activeSection} />
           <div ref={ref} id="sections-container" className="w-full h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar">
             <Home />
