@@ -8,10 +8,10 @@ function SkillBar({ skill, current }) {
       <div className="flex flex-col h-max w-full gap-1">
         <div className="flex justify-between">
           <p>
-            { skill }
+            {skill}
           </p>
           <p>
-            { levels[current - 1] }
+            {levels[current - 1]}
           </p>
         </div>
         <div className="h-[7px] w-full">
@@ -19,7 +19,9 @@ function SkillBar({ skill, current }) {
             {
               colors.map((color, index) => {
                 const combinedColor = index < current ? color : defaultColor;
-                return (<span className={"w-[20%] rounded-xl " + combinedColor}></span>);
+                return (
+                  <span key={index} className={"w-[20%] rounded-xl " + combinedColor}>
+                  </span>);
               })
             }
           </div>
