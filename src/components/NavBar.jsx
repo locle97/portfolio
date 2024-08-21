@@ -6,8 +6,8 @@ import { routing } from '../routing';
 import './NavBar.css';
 
 export function Avatar({ isFlipped }) {
-  return <div className="avatar w-1/3">
-    <img className="rounded-full w-full aspect-square grayscale"
+  return <div className="avatar w-[120px]">
+    <img className="rounded-full w-full aspect-square"
       src={avatarUrl}
       alt="avatar" />
   </div>;
@@ -15,6 +15,9 @@ export function Avatar({ isFlipped }) {
 
 export function NavItems({ activeSection, onLinkClick }) {
   const navItems = routing;
+
+  const downloadCV = () => {
+  };
 
   return (
     <>
@@ -24,6 +27,12 @@ export function NavItems({ activeSection, onLinkClick }) {
             <a className={activeSection === item.id ? "active" : ""} href={item.link}>{item.name}</a>
           </li>
         ))}
+        <li className="hover:text-gray-700" onClick={downloadCV}>
+          <button>
+            <span>Download CV</span>
+            {/*<i className="fi fi-sr-download"></i>*/}
+          </button>
+        </li>
       </ul>
     </>
   );

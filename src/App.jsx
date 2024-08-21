@@ -15,9 +15,17 @@ import './App.css'
 const url = '/data.json';
 
 function App() {
+  const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
   const [data, setData] = useState({});
   let ref = useRef(0);
+
+  function navigateTo(sectionId) {
+    const sectionElm = document.getElementById(sectionId);
+    if (sectionElm && routing.map(t => t.id).includes(sectionId)) {
+      sectionElm.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   // Fetch data
   useEffect(() => {
@@ -37,11 +45,19 @@ function App() {
       const containerRect = ref.current.getBoundingClientRect();
       let currentSection = activeSection;
 
+      const homeSection = document.getElementById('home');
+      const scrollYFromTop = Math.abs(homeSection.getBoundingClientRect().top - containerRect.top);
+      setScrollY(scrollYFromTop);
+
       sections.forEach((section) => {
         const rect = section.getBoundingClientRect();
 
         if (rect.top <= containerRect.top + 1) {
           currentSection = section.id;
+        }
+
+        if (rect.top <= containerRect.bottom + 100) {
+          // TODO: Directly scroll if the section is not fully visible
         }
       });
 
@@ -56,13 +72,10 @@ function App() {
     // Catch the initial hash id to navigate to the correct section
     if (window.location.hash) {
       const sectionId = window.location.hash.slice(1);
-      const sectionElm = document.getElementById(sectionId);
-      if (sectionElm && routing.map(t => t.id).includes(sectionId)) {
-        sectionElm.scrollIntoView({ behavior: 'smooth' });
-        setActiveSection(sectionId);
-      }
+      navigateTo(sectionId);
     }
   }, [data]);
+
 
   return (
     <>
@@ -87,7 +100,7 @@ function App() {
         <div className="transition-all flex flex-col lg:flex-row gap-8 w-full h-full lg:w-[80%] lg:h-[80%]">
           <NavBar activeSection={activeSection} />
           <div ref={ref} id="sections-container" className="w-full h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar">
-            <Home name={data?.about?.name} title={data.about?.title} />
+            <Home scrollY={scrollY} name={data?.about?.name} title={data.about?.title} navigateToNextSection={() => navigateTo("about")}/>
             <About about={data.about} />
             <Projects />
             <Contact />

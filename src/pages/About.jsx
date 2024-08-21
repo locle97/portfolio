@@ -25,7 +25,7 @@ function Achivements({ achivements }) {
   return <Section title="Achivements">
     <div className="flex flex-col gap-16">
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-0">
-        <div className="flex flex-col w-full lg:w-1/2 px-2 lg:pr-8 gap-8 lg:border-r-[1px]">
+        <div className="relative flex flex-col w-full lg:w-1/2 px-2 lg:pr-8 gap-8 lg:border-r-[1px]">
           <p className="text-black font-bold uppercase">
             Awards
           </p>
@@ -42,7 +42,7 @@ function Achivements({ achivements }) {
             })}
           </div>
         </div>
-        <div className="right flex flex-col w-full lg:w-1/2 px-2 lg:pl-8 gap-8">
+        <div className="relative right flex flex-col w-full lg:w-1/2 px-2 lg:pl-8 gap-8">
           <p className="text-black font-bold uppercase">
             Certifications
           </p>
@@ -190,7 +190,7 @@ function AboutMe({ about }) {
         <p>Freelance: {about.freelanceStatus}</p>
       </div>
       <div>
-        <Button>Download CV</Button>
+        <Button>Download CV <i className="fi fi-sr-download"></i></Button>
       </div>
     </div>
   </Section>;
