@@ -1,6 +1,6 @@
 import Section from "../components/Section";
 import Button from "../components/Button";
-import SkillBar from "../components/ProgressBar";
+import SkillBar from "../components/SkillBar";
 import TimelineItem from "../components/TimelineItem";
 
 export function About() {
@@ -45,14 +45,13 @@ function Timelines() {
           <div className="flex flex-col gap-6">
             {workExperiences.map((experience, index) => {
               return (
-                <>
+                <div key={index}>
                   <TimelineItem
-                    key={index}
                     title={experience.title}
                     subtitle={experience.subtitle}
                     period={experience.period} />
                   {index < workExperiences.length - 1 ? <hr /> : null}
-                </>
+                </div>
               );
             })}
           </div>
@@ -64,14 +63,14 @@ function Timelines() {
           <div className="flex flex-col gap-6">
             {educations.map((education, index) => {
               return (
-                <>
+                <div key={index}>
                   <TimelineItem
                     key={index}
                     title={education.title}
                     subtitle={education.subtitle}
                     period={education.period} />
                   {index < educations.length - 1 ? <hr /> : null}
-                </>
+                </div>
               );
             })}
           </div>
