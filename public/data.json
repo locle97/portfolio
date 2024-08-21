@@ -1,7 +1,4 @@
 {
-  "name": "Loc Le",
-  "title": "Fullstack Developer",
-  "imageUrl": "../assets/images/avatar.jpeg",
   "externalLinks": {
     "facebook": "https://facebook.com/lpl212757",
     "github": "https://github.com/locle97",
@@ -9,6 +6,141 @@
     "youtube": "#"
   },
   "about": {
-
+    "name": "Loc Le",
+    "title": "Fullstack Developer",
+    "introduction": "A highly motivated and results-driven software engineer with 6 years of experience in C# and .Net Core. Graduated from Ho Chi Minh University of Science with a strong academic record. Currently serving as a Senior Software Engineer at Nashtech, where I have been recognized as the Top Excellent Developer in 2020 and Developer of the Year in 2022. Possess a strong ability to analyze and solve complex problems effectively. Committed to delivering high-quality software solutions to meet customer needs and exceed expectations.",
+    "imageUrl": "../assets/images/avatar.jpeg",
+    "fullName": "Le Phat Loc",
+    "email": "lpl212757@gmail.com",
+    "phone": "+84 907 132 458",
+    "website": "www.locle.dev",
+    "freelanceStatus": "Available",
+    "birthYear": 1997,
+    "location": "Ho Chi Minh, VietNam",
+    "achivements": {
+      "awards": [
+        {
+          "title": "Developer of the Year 2022",
+          "issuer": "NashTech"
+        },
+        {
+          "title": "Top excellence Developer 2020",
+          "issuer": "NashTech"
+        }
+      ],
+      "certifications": [
+        {
+          "title": "IBM AI Engineering",
+          "issuer": "IBM"
+        },
+        {
+          "title": "Big-O Blue",
+          "issuer": "Big-O Coding"
+        }
+      ]
+    },
+    "timelines": {
+      "educations": [
+        {
+          "title": "HCM University of Science",
+          "subtitle": "College - Information Technology",
+          "period": "2015-2018"
+        }
+      ],
+      "workExperiences": [
+        {
+          "title": "NashTech",
+          "subtitle": "Senior Software Engineer",
+          "period": "2021-now"
+        },
+        {
+          "title": "NashTech",
+          "subtitle": "Software Engineer",
+          "period": "2018-2021"
+        }
+      ]
+    },
+    "skills": {
+      "backend": [
+        {
+          "skill": "ASP.NET Core",
+          "current": 4
+        },
+        {
+          "skill": "Neo4J",
+          "current": 4
+        },
+        {
+          "skill": "ElasticSearch",
+          "current": 3
+        },
+        {
+          "skill": "SQL Server",
+          "current": 3
+        },
+        {
+          "skill": "Python",
+          "current": 2
+        }
+      ],
+      "frontend": [
+        {
+          "skill": "Angular",
+          "current": 3
+        },
+        {
+          "skill": "React",
+          "current": 2
+        },
+        {
+          "skill": "Javascript / Typescript",
+          "current": 3
+        },
+        {
+          "skill": "HTML",
+          "current": 3
+        },
+        {
+          "skill": "CSS",
+          "current": 2
+        }
+      ],
+      "designsAndArchitectures": [
+        {
+          "skill": "Microservices",
+          "current": 3
+        },
+        {
+          "skill": "Message Queuing / Event-Driven",
+          "current": 2
+        },
+        {
+          "skill": "Clean Architecture",
+          "current": 1
+        }
+      ],
+      "tools": [
+        {
+          "skill": "Vim",
+          "current": 4
+        },
+        {
+          "skill": "Trello",
+          "current": 3
+        },
+        {
+          "skill": "Linux / Windows",
+          "current": 2
+        },
+        {
+          "skill": "Git",
+          "current": 2
+        },
+        {
+          "skill": "Docker",
+          "current": 1
+        }
+      ]
+    }
   }
 }

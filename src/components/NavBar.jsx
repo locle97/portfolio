@@ -5,7 +5,7 @@ import { routing } from '../routing';
 
 import './NavBar.css';
 
-export function Avatar({isFlipped}) {
+export function Avatar({ isFlipped }) {
   return <div className="avatar w-1/3">
     <img className="rounded-full w-full aspect-square grayscale"
       src={avatarUrl}
@@ -63,7 +63,7 @@ const animation = {
   transition: { duration: 0.2 }
 }
 
-export function MobileMenu({activeSection}) {
+export function MobileMenu({ activeSection }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -90,11 +90,11 @@ export function MobileMenu({activeSection}) {
               >
                 <div className="close-modal w-full h-12 flex flex-col items-end p-8">
                   <div className="text-black text-xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                    <i class="fi fi-sr-cross"></i>
+                    <i className="fi fi-sr-cross"></i>
                   </div>
                 </div>
                 <div className="flex flex-col h-full justify-center items-center py-36 gap-16">
-                  <Avatar isFlipped={true}/>
+                  <Avatar isFlipped={true} />
                   <NavItems activeSection={activeSection} onLinkClick={() => setIsMenuOpen(false)} />
                   <Footer />
                 </div>
@@ -111,11 +111,11 @@ export function NavBar({ activeSection }) {
   return (
     <>
       <div className="hidden lg:flex flex-col w-1/3 h-full bg-white justify-center items-center py-36 gap-16">
-        <Avatar isFlipped={false}/>
+        <Avatar isFlipped={false} />
         <NavItems activeSection={activeSection} />
         <Footer />
       </div>
-      <MobileMenu activeSection={activeSection}/>
+      <MobileMenu activeSection={activeSection} />
     </>
   );
 }

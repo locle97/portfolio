@@ -21,7 +21,7 @@ function App() {
 
   // Fetch data
   useEffect(() => {
-    const fetchData = async() => {
+    const fetchData = async () => {
       const response = await fetch(url);
       const jsonData = await response.json();
 
@@ -49,18 +49,20 @@ function App() {
     };
 
     ref.current.addEventListener('scroll', handleScroll);
-    // Catch the initial hash id to navigate to the correct section
-    if (window.location.hash) {
-      const sectionId = window.location.hash.slice(1);
-      if (routing.map(t => t.id).includes(sectionId)) {
-        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
-        setActiveSection(sectionId);
-      }
-    }
-
     return () => ref.current.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Catch the initial hash id to navigate to the correct section
+    if (window.location.hash) {
+      const sectionId = window.location.hash.slice(1);
+      const sectionElm = document.getElementById(sectionId);
+      if (sectionElm && routing.map(t => t.id).includes(sectionId)) {
+        sectionElm.scrollIntoView({ behavior: 'smooth' });
+        setActiveSection(sectionId);
+      }
+    }
+  }, [data]);
 
   return (
     <>
@@ -85,10 +87,9 @@ function App() {
         <div className="transition-all flex flex-col lg:flex-row gap-8 w-full h-full lg:w-[80%] lg:h-[80%]">
           <NavBar activeSection={activeSection} />
           <div ref={ref} id="sections-container" className="w-full h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar">
-            <Home name={data.name} title={data.title} />
-            <About />
+            <Home name={data?.about?.name} title={data.about?.title} />
+            <About about={data.about} />
             <Projects />
-            <Portfolio />
             <Contact />
           </div>
         </div>
