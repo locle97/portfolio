@@ -3,17 +3,22 @@ import Button from "../components/Button";
 import SkillBar from "../components/SkillBar";
 import TimelineItem from "../components/TimelineItem";
 
+import './About.css';
+
 export function About({ about }) {
   if (!about) {
     return null;
   }
 
   return (
-    <div id="about" className="section flex flex-col w-full h-max py-20 px-6 lg:px-12 gap-16 bg-white">
-      <AboutMe about={about} />
-      <Timelines timelines={about.timelines} />
-      <Achivements achivements={about.achivements} />
-      <Skills skills={about.skills} />
+    <div id="about" className="section flex flex-col justify-center items-center w-full h-max py-20 px-6 lg:px-12 bg-white">
+      <h2 className="text-4xl font-bold text-black">About</h2>
+      <div className="flex flex-col w-full h-max pt-20 gap-16 bg-white">
+        <AboutMe about={about} />
+        <Timelines timelines={about.timelines} />
+        <Achivements achivements={about.achivements} />
+        <Skills skills={about.skills} />
+      </div>
     </div>
   );
 }
@@ -184,9 +189,9 @@ function AboutMe({ about }) {
         <p>Age: {new Date().getFullYear() - about.birthYear}</p>
         <p>City: {about.location}</p>
         <p>Job: {about.title}</p>
-        <p>Phone: <span className="text-black">{about.phone}</span></p>
-        <p>Email: <span className="text-black">{about.email}</span></p>
-        <p>Website: <span className="text-black">{about.website}</span></p>
+        <p>Phone: <span className="text-black link-underline">{about.phone}</span></p>
+        <p>Email: <span className="text-black link-underline">{about.email}</span></p>
+        <p>Website: <a href={about.website} className="text-black link-underline">{about.website}</a></p>
         <p>Freelance: {about.freelanceStatus}</p>
       </div>
       <div>

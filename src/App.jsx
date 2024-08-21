@@ -102,7 +102,7 @@ function App() {
           <div ref={ref} id="sections-container" className="w-full h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar">
             <Home scrollY={scrollY} name={data?.about?.name} title={data.about?.title} navigateToNextSection={() => navigateTo("about")}/>
             <About about={data.about} />
-            <Projects />
+            <Projects projects={data.projects} />
             <Contact />
           </div>
         </div>
