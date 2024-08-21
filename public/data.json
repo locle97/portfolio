@@ -143,5 +143,15 @@
       ]
     }
   },
-  "projects": []
+  "projects": [
+    {
+      "title": "Simple Resume",
+      "thumbnail": "gif/simple-resume-demo.gif",
+      "thumbnailAlt": "Simple Resume",
+      "description": "Simple Resume is a web application designed to help users effortlessly create minimalist, professional resumes. With an intuitive interface and customizable templates, it streamlines the resume-building process, ensuring users can quickly generate a polished and visually appealing resume tailored to their needs. Key features include real-time editing, export options, and a user-friendly experience, making it an essential tool for job seekers aiming to showcase their skills and experiences effectively.",
+      "url": "https://simpleresume.net/",
+      "github": "https://github.com/locle97/SimpleResume",
+      "techStack": ["react", "javascript", "html", "css"]
+    }
+  ]
 }

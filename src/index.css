@@ -1,5 +1,7 @@
 @import "../node_modules/@flaticon/flaticon-uicons/css/all/all";
 @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 @tailwind base;
 @tailwind components;
