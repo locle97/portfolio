@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { AnimatePresence } from 'framer-motion';
 import React from "react";
 import AnimatedCursor from "react-animated-cursor"
 
@@ -13,9 +12,24 @@ import { routing } from './routing';
 
 import './App.css'
 
+const url = '/data.json';
+
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [data, setData] = useState({});
   let ref = useRef(0);
+
+  // Fetch data
+  useEffect(() => {
+    const fetchData = async() => {
+      const response = await fetch(url);
+      const jsonData = await response.json();
+
+      setData(jsonData);
+    }
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,7 +85,7 @@ function App() {
         <div className="transition-all flex flex-col lg:flex-row gap-8 w-full h-full lg:w-[80%] lg:h-[80%]">
           <NavBar activeSection={activeSection} />
           <div ref={ref} id="sections-container" className="w-full h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar">
-            <Home />
+            <Home name={data.name} title={data.title} />
             <About />
             <Projects />
             <Portfolio />
