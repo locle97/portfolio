@@ -97,7 +97,7 @@ function TechStackItem({ techCode }) {
   return (
     <div className="flex flex-col justify-center items-center text-center hover:scale-125 transistion-all delay-150 duration-300">
       <img
-        className="w-12 h-12"
+        className="w-10 h-10"
         src={techMapping[techCode].logo}
         alt={techMapping[techCode].alt}
       />
