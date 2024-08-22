@@ -1,6 +1,7 @@
 import Section from '../components/Section';
 import Button from '../components/Button';
 
+// TODO: Implement the contact form using https://web3forms.com/#start
 export function Contact({ about }) {
   if (!about) {
     return null;
@@ -13,7 +14,7 @@ export function Contact({ about }) {
         <Section title="Contact me">
           <div className="flex flex-col gap-10 w-full max-w">
             <p>Email me at <span className="text-black">{about.email}</span> or message me here:</p>
-            <div>
+            <form>
               {/* This is a working contact form. 
                Get your free access key from: https://web3forms.com/ */}
               <div className="flex flex-col gap-6">
@@ -37,7 +38,7 @@ export function Contact({ about }) {
                   <Button>Send Message</Button>
                 </div>
               </div>
-            </div>
+            </form>
 
           </div>
         </Section>
