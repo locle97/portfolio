@@ -3,6 +3,7 @@ import Button from "../components/Button";
 import SkillBar from "../components/SkillBar";
 import TimelineItem from "../components/TimelineItem";
 import NextPageButton from "../components/NextPageButton";
+import { downloadCV } from "../utils/Utils"
 
 import './About.css';
 import AnimatedPage from "../components/AnimatedPage";
@@ -200,7 +201,7 @@ function AboutMe({ about }) {
         <p>Freelance: {about.freelanceStatus}</p>
       </div>
       <div>
-        <Button>Download CV <i className="fi fi-sr-download"></i></Button>
+        <Button onClick={downloadCV}>Download CV <i className="fi fi-sr-download"></i></Button>
       </div>
     </div>
   </Section>;

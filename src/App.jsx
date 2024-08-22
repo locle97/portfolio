@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import React from "react";
+import { BrowserRouter } from 'react-router-dom';
 
 import AnimatedCursor from "react-animated-cursor"
 import Particles, { initParticlesEngine } from "@tsparticles/react";
@@ -58,7 +59,9 @@ function App() {
         id="tsparticles"
         particlesLoaded={particlesLoaded}
         options={options} />
-      <MainApp />
+      <BrowserRouter>
+        <MainApp />
+      </BrowserRouter>
     </>
   )
 }

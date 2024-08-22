@@ -1,90 +1,29 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import avatarUrl from '../assets/images/avatar.jpeg';
-import { routing } from '../routing';
 
 import './NavBar.css';
-
-export function Avatar({ isFlipped }) {
-  return <div className="avatar w-[120px]">
-    <img className="rounded-full w-full aspect-square"
-      src={avatarUrl}
-      alt="avatar" />
-  </div>;
-}
-
-export function NavItems({ onLinkClick }) {
-  const navItems = routing;
-
-  const downloadCV = () => {
-  };
-
-  return (
-    <>
-      <ul id="navlinks" className="flex flex-col items-center gap-4">
-        {navItems.map((item, index) => (
-          <li key={index} className="hover:text-gray-700" onClick={onLinkClick}>
-            <NavLink to={item.link}>{item.name}</NavLink>
-          </li>
-        ))}
-        <li className="hover:text-gray-700" onClick={downloadCV}>
-          <button>
-            <span>Download CV</span>
-            {/*<i className="fi fi-sr-download"></i>*/}
-          </button>
-        </li>
-      </ul>
-    </>
-  );
-}
-
-export function Footer() {
-  const year = new Date().getFullYear();
-  const socials = [
-    { name: "Youtube", class: "fi fi-brands-youtube", link: "#" },
-    { name: "Facebook", class: "fi fi-brands-facebook", link: "#" },
-    { name: "Linkedin", class: "fi fi-brands-linkedin", link: "#" },
-    { name: "Github", class: "fi fi-brands-github", link: "#" }
-  ];
-
-  return (
-    <>
-      <div className="flex flex-col gap-6 footer text-center items-center">
-        <div className="copyright">
-          <p>Copyright © {year} by <span className="text-black">Loc Le</span></p>
-          <p>All rights are reserved</p>
-        </div>
-        <div className="flex gap-4 justify-center items-center text-gray-500">
-          {socials.map((social, index) => (
-            <a href={social.link} key={index} className="hover:text-black">
-              <i key={index} className={social.class}></i>
-            </a>
-          ))}
-        </div>
-      </div>
-    </>
-  );
-}
+import { Footer } from './Footer';
+import { Avatar } from './Avatar';
+import { NavItems } from './NavItems';
 
 const animation = {
-  initial: { opacity: 0, x: 100 },
+  initial: { opacity: 0, x: "100%" },
   animate: { opacity: 1, x: 0 },
   transition: { duration: 0.2 }
 }
 
-export function MobileMenu() {
+function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
-      <AnimatePresence>
-        <div className="z-50 lg:hidden absolute left-0 top-0 transition-all lg:hidden flex w-full h-12 px-8 justify-end items-end bg-white">
-          <div className="text-black text-2xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            <i className="fi fi-sr-menu-burger"></i>
-          </div>
+      <div className="z-50 lg:hidden absolute left-0 top-0 transition-all lg:hidden flex w-full h-12 px-8 justify-end items-end bg-white">
+        <div className="text-black text-2xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <i className="fi fi-sr-menu-burger"></i>
         </div>
+      </div>
+      <AnimatePresence>
         {isMenuOpen &&
           (
             <>

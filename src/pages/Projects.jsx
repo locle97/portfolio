@@ -88,6 +88,10 @@ function TechStackItem({ techCode }) {
       logo: 'images/logo/javascript.svg',
       alt: 'Javascript'
     },
+    'tailwindcss': {
+      logo: 'images/logo/tailwindcss.svg',
+      alt: 'Tailwind CSS'
+    },
   }
 
   return (

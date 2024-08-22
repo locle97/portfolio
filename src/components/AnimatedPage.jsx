@@ -11,11 +11,11 @@ const AnimatedPage = ({ children }) => {
     <motion.div id="sections-container" 
       className="w-full h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar"
       variants={motionOptions} 
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.3 }}
 
       initial="initial" 
       animate="animate"
-      exit="initial"
+      exit="exit"
     >
       {children}
     </motion.div>
