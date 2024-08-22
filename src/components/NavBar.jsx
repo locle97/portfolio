@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+
 import { AnimatePresence, motion } from 'framer-motion';
 import avatarUrl from '../assets/images/avatar.jpeg';
 import { routing } from '../routing';
@@ -13,7 +15,7 @@ export function Avatar({ isFlipped }) {
   </div>;
 }
 
-export function NavItems({ activeSection, onLinkClick }) {
+export function NavItems({ onLinkClick }) {
   const navItems = routing;
 
   const downloadCV = () => {
@@ -24,7 +26,7 @@ export function NavItems({ activeSection, onLinkClick }) {
       <ul id="navlinks" className="flex flex-col items-center gap-4">
         {navItems.map((item, index) => (
           <li key={index} className="hover:text-gray-700" onClick={onLinkClick}>
-            <a className={activeSection === item.id ? "active" : ""} href={item.link}>{item.name}</a>
+            <NavLink to={item.link}>{item.name}</NavLink>
           </li>
         ))}
         <li className="hover:text-gray-700" onClick={downloadCV}>
@@ -72,13 +74,13 @@ const animation = {
   transition: { duration: 0.2 }
 }
 
-export function MobileMenu({ activeSection }) {
+export function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <>
       <AnimatePresence>
-        <div className="z-50 lg:hidden absolute left-0 top-0 transition-all lg:hidden flex w-full h-12 p-8 justify-end">
+        <div className="z-50 lg:hidden absolute left-0 top-0 transition-all lg:hidden flex w-full h-12 px-8 justify-end items-end bg-white">
           <div className="text-black text-2xl" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             <i className="fi fi-sr-menu-burger"></i>
           </div>
@@ -104,7 +106,7 @@ export function MobileMenu({ activeSection }) {
                 </div>
                 <div className="flex flex-col h-full justify-center items-center py-36 gap-16">
                   <Avatar isFlipped={true} />
-                  <NavItems activeSection={activeSection} onLinkClick={() => setIsMenuOpen(false)} />
+                  <NavItems onLinkClick={() => setIsMenuOpen(false)} />
                   <Footer />
                 </div>
               </motion.div>
@@ -116,15 +118,15 @@ export function MobileMenu({ activeSection }) {
   )
 }
 
-export function NavBar({ activeSection }) {
+export function NavBar() {
   return (
     <>
       <div className="hidden lg:flex flex-col w-1/3 min-w-[300px] h-full bg-white justify-center items-center py-36 gap-16">
         <Avatar isFlipped={false} />
-        <NavItems activeSection={activeSection} />
+        <NavItems />
         <Footer />
       </div>
-      <MobileMenu activeSection={activeSection} />
+      <MobileMenu />
     </>
   );
 }

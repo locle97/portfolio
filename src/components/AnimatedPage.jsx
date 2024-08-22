@@ -1,16 +1,21 @@
 import { motion } from 'framer-motion';
 
-const animation = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  exit: { opacity: 0 }
-}
+const motionOptions = {
+  initial: { x: "-100%", opacity: 0 },
+  animate: { x: 0, opacity: 1 },
+  exit: { x: "100%", opacity: 0 }
+};
 
-const AnimatedPage = ({ id, children }) => {
+const AnimatedPage = ({ children }) => {
   return (
-    <motion.div 
-      id={id} 
-      className="section flex flex-col gap-4 min-h-full min-w-full bg-white justify-center items-center"
+    <motion.div id="sections-container" 
+      className="w-full h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar"
+      variants={motionOptions} 
+      transition={{ duration: 0.5 }}
+
+      initial="initial" 
+      animate="animate"
+      exit="initial"
     >
       {children}
     </motion.div>

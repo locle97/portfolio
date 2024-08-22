@@ -2,8 +2,10 @@ import Section from "../components/Section";
 import Button from "../components/Button";
 import SkillBar from "../components/SkillBar";
 import TimelineItem from "../components/TimelineItem";
+import NextPageButton from "../components/NextPageButton";
 
 import './About.css';
+import AnimatedPage from "../components/AnimatedPage";
 
 export function About({ about }) {
   if (!about) {
@@ -11,15 +13,18 @@ export function About({ about }) {
   }
 
   return (
-    <div id="about" className="section flex flex-col justify-center items-center w-full h-max py-20 px-6 2xl:px-12 bg-white">
-      <h2 className="text-4xl font-bold text-black">About</h2>
-      <div className="flex flex-col w-full h-max pt-20 gap-16 bg-white">
-        <AboutMe about={about} />
-        <Timelines timelines={about.timelines} />
-        <Achivements achivements={about.achivements} />
-        <Skills skills={about.skills} />
+    <AnimatedPage>
+      <div id="about" className="relative section flex flex-col justify-center items-center w-full h-max pt-20 pb-24 px-6 2xl:px-12 bg-white">
+        <NextPageButton title="My Projects" nextPage="/projects" />
+        <h2 className="text-4xl font-bold text-black">About</h2>
+        <div className="flex flex-col w-full h-max pt-20 gap-16 bg-white">
+          <AboutMe about={about} />
+          <Timelines timelines={about.timelines} />
+          <Achivements achivements={about.achivements} />
+          <Skills skills={about.skills} />
+        </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 }
 

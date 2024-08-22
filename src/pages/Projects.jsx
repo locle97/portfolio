@@ -1,4 +1,6 @@
+import AnimatedPage from '../components/AnimatedPage';
 import Section from '../components/Section';
+import NextPageButton from '../components/NextPageButton';
 
 export function Projects({ projects }) {
   if (!projects) {
@@ -6,62 +8,65 @@ export function Projects({ projects }) {
   }
 
   return (
-    <div id="projects" className="section flex flex-col justify-center items-center w-full h-max py-20 px-6 lg:px-12 bg-white">
-      <h2 className="text-4xl font-bold text-black">Projects</h2>
-      <div className="section flex flex-col w-full h-max pt-20 gap-16 bg-white">
-        {
-          projects.map((project, index) => {
-            return <Section key={index} title={project.title}>
-              <div className="flex flex-col gap-8 w-full">
+    <AnimatedPage>
+      <div id="projects" className="relative section flex flex-col justify-center items-center w-full h-max pt-20 pb-24 px-6 lg:px-12 bg-white">
+        <NextPageButton title="Contact me" nextPage="/contact" />
+        <h2 className="text-4xl font-bold text-black">Projects</h2>
+        <div className="section flex flex-col w-full h-max pt-20 gap-16 bg-white">
+          {
+            projects.map((project, index) => {
+              return <Section key={index} title={project.title}>
+                <div className="flex flex-col gap-8 w-full">
 
-                {/* Image */}
-                <img
-                  className="rounded-md shadow-md"
-                  src={project.thumbnail}
-                  alt={project.thumbnailAlt}
-                />
+                  {/* Image */}
+                  <img
+                    className="rounded-md shadow-md"
+                    src={project.thumbnail}
+                    alt={project.thumbnailAlt}
+                  />
 
-                {/* Buttons */}
-                <div className="button-group flex flex-col gap-2 sm:flex-row sm:gap-6 justify-center items-center">
-                  {
-                    project.url &&
-                    (
-                      <button
-                        onClick={() => window.open(project.url)}
-                        className="w-max bg-white transistion-all delay-150 duration-300 button rounded-lg border-2 border-gray-800 text-gray-800 px-8 py-2 hover:scale-125">
-                        Live Demo <i className="fi fi-rr-arrow-up-right-from-square"></i>
-                      </button>
-                    )
-                  }
-                  {
-                    project.github &&
-                    (
-                      <button
-                        onClick={() => window.open(project.github)}
-                        className="w-max transistion-all delay-150 duration-300 button rounded-lg bg-gray-800 text-gray-200 px-8 py-2 hover:scale-125">
-                        Github Code <i className="fi fi-brands-github"></i>
-                      </button>
-                    )
-                  }
+                  {/* Buttons */}
+                  <div className="button-group flex flex-col gap-2 sm:flex-row sm:gap-6 justify-center items-center">
+                    {
+                      project.url &&
+                      (
+                        <button
+                          onClick={() => window.open(project.url)}
+                          className="w-max bg-white transistion-all delay-150 duration-300 button rounded-lg border-2 border-gray-800 text-gray-800 px-8 py-2 hover:scale-125">
+                          Live Demo <i className="fi fi-rr-arrow-up-right-from-square"></i>
+                        </button>
+                      )
+                    }
+                    {
+                      project.github &&
+                      (
+                        <button
+                          onClick={() => window.open(project.github)}
+                          className="w-max transistion-all delay-150 duration-300 button rounded-lg bg-gray-800 text-gray-200 px-8 py-2 hover:scale-125">
+                          Github Code <i className="fi fi-brands-github"></i>
+                        </button>
+                      )
+                    }
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-center">{project.description}</p>
+
+                  {/* Tech Stack */}
+                  <div className="flex flex-wrap justify-center gap-8">
+                    {
+                      project.techStack && project.techStack.map((tech, index) => {
+                        return <TechStackItem key={index} techCode={tech} />
+                      })
+                    }
+                  </div>
                 </div>
-
-                {/* Description */}
-                <p className="text-center">{project.description}</p>
-
-                {/* Tech Stack */}
-                <div className="flex justify-center gap-8">
-                  {
-                    project.techStack && project.techStack.map((tech, index) => {
-                      return <TechStackItem key={index} techCode={tech} />
-                    })
-                  }
-                </div>
-              </div>
-            </Section>
-          })
-        }
+              </Section>
+            })
+          }
+        </div>
       </div>
-    </div>
+    </AnimatedPage>
   );
 }
 
