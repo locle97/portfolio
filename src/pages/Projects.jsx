@@ -22,14 +22,14 @@ export function Projects({ projects }) {
                 />
 
                 {/* Buttons */}
-                <div className="button-group flex gap-8 justify-center">
+                <div className="button-group flex flex-col gap-2 sm:flex-row sm:gap-6 justify-center items-center">
                   {
                     project.url &&
                     (
                       <button
                         onClick={() => window.open(project.url)}
-                        className="bg-white transistion-all delay-150 duration-300 button rounded-lg border-2 border-gray-800 text-gray-800 px-8 py-2 hover:scale-125">
-                        Live Demo <i class="fi fi-rr-arrow-up-right-from-square"></i>
+                        className="w-max bg-white transistion-all delay-150 duration-300 button rounded-lg border-2 border-gray-800 text-gray-800 px-8 py-2 hover:scale-125">
+                        Live Demo <i className="fi fi-rr-arrow-up-right-from-square"></i>
                       </button>
                     )
                   }
@@ -38,8 +38,8 @@ export function Projects({ projects }) {
                     (
                       <button
                         onClick={() => window.open(project.github)}
-                        className="transistion-all delay-150 duration-300 button rounded-lg bg-gray-800 text-gray-200 px-8 py-2 hover:scale-125">
-                        Github Code <i class="fi fi-brands-github"></i>
+                        className="w-max transistion-all delay-150 duration-300 button rounded-lg bg-gray-800 text-gray-200 px-8 py-2 hover:scale-125">
+                        Github Code <i className="fi fi-brands-github"></i>
                       </button>
                     )
                   }
@@ -52,7 +52,7 @@ export function Projects({ projects }) {
                 <div className="flex justify-center gap-8">
                   {
                     project.techStack && project.techStack.map((tech, index) => {
-                      return <TechStackItem techCode={tech} />
+                      return <TechStackItem key={index} techCode={tech} />
                     })
                   }
                 </div>

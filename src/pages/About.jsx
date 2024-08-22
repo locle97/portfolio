@@ -11,7 +11,7 @@ export function About({ about }) {
   }
 
   return (
-    <div id="about" className="section flex flex-col justify-center items-center w-full h-max py-20 px-6 lg:px-12 bg-white">
+    <div id="about" className="section flex flex-col justify-center items-center w-full h-max py-20 px-6 2xl:px-12 bg-white">
       <h2 className="text-4xl font-bold text-black">About</h2>
       <div className="flex flex-col w-full h-max pt-20 gap-16 bg-white">
         <AboutMe about={about} />
@@ -29,8 +29,8 @@ function Achivements({ achivements }) {
 
   return <Section title="Achivements">
     <div className="flex flex-col gap-16">
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-0">
-        <div className="relative flex flex-col w-full lg:w-1/2 px-2 lg:pr-8 gap-8 lg:border-r-[1px]">
+      <div className="flex flex-col 2xl:flex-row gap-12 2xl:gap-0">
+        <div className="relative flex flex-col w-full 2xl:w-1/2 px-2 2xl:pr-8 gap-8 2xl:border-r-[1px]">
           <p className="text-black font-bold uppercase">
             Awards
           </p>
@@ -47,7 +47,7 @@ function Achivements({ achivements }) {
             })}
           </div>
         </div>
-        <div className="relative right flex flex-col w-full lg:w-1/2 px-2 lg:pl-8 gap-8">
+        <div className="relative right flex flex-col w-full 2xl:w-1/2 px-2 2xl:pl-8 gap-8">
           <p className="text-black font-bold uppercase">
             Certifications
           </p>
@@ -75,8 +75,8 @@ function Timelines({ timelines }) {
 
   return <Section title="Timeline">
     <div className="flex flex-col gap-16">
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-0">
-        <div className="flex flex-col w-full lg:w-1/2 px-2 lg:pr-8 gap-8 lg:border-r-[1px]">
+      <div className="flex flex-col 2xl:flex-row gap-12 2xl:gap-0">
+        <div className="flex flex-col w-full 2xl:w-1/2 px-2 2xl:pr-8 gap-8 2xl:border-r-[1px]">
           <p className="text-black font-bold uppercase">
             Work Experiences
           </p>
@@ -94,7 +94,7 @@ function Timelines({ timelines }) {
             })}
           </div>
         </div>
-        <div className="right flex flex-col w-full lg:w-1/2 px-2 lg:pl-8 gap-8">
+        <div className="right flex flex-col w-full 2xl:w-1/2 px-2 2xl:pl-8 gap-8">
           <p className="text-black font-bold uppercase">
             Educations
           </p>
@@ -128,8 +128,8 @@ function Skills({ skills }) {
     <Section title="Skills">
       <div className="flex flex-col gap-16">
         {/* First row */}
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-0">
-          <div className="flex flex-col w-full lg:w-1/2 px-2 lg:pr-8 gap-8 lg:border-r-[1px]">
+        <div className="flex flex-col 2xl:flex-row gap-16 2xl:gap-0">
+          <div className="flex flex-col w-full 2xl:w-1/2 px-2 2xl:pr-8 gap-8 2xl:border-r-[1px]">
             <p className="text-black font-bold uppercase">
               Backend
             </p>
@@ -139,7 +139,7 @@ function Skills({ skills }) {
               })}
             </div>
           </div>
-          <div className="right flex flex-col w-full lg:w-1/2 px-2 lg:pl-8 gap-8">
+          <div className="right flex flex-col w-full 2xl:w-1/2 px-2 2xl:pl-8 gap-8">
             <p className="text-black font-bold uppercase">
               Frontend
             </p>
@@ -152,8 +152,8 @@ function Skills({ skills }) {
         </div>
 
         {/* Second row */}
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-0">
-          <div className="flex flex-col w-full lg:w-1/2 px-2 lg:pr-8 gap-8 lg:border-r-[1px]">
+        <div className="flex flex-col 2xl:flex-row gap-16 2xl:gap-0">
+          <div className="flex flex-col w-full 2xl:w-1/2 px-2 2xl:pr-8 gap-8 2xl:border-r-[1px]">
             <p className="text-black font-bold uppercase">
               Software Design and Architecture
             </p>
@@ -163,7 +163,7 @@ function Skills({ skills }) {
               })}
             </div>
           </div>
-          <div className="flex flex-col w-full lg:w-1/2 px-2 lg:pl-8 gap-8">
+          <div className="flex flex-col w-full 2xl:w-1/2 px-2 2xl:pl-8 gap-8">
             <p className="text-black font-bold uppercase">
               Tools
             </p>

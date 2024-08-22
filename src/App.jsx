@@ -103,7 +103,7 @@ function App() {
             <Home scrollY={scrollY} name={data?.about?.name} title={data.about?.title} navigateToNextSection={() => navigateTo("about")}/>
             <About about={data.about} />
             <Projects projects={data.projects} />
-            <Contact />
+            <Contact about={data.about} />
           </div>
         </div>
       </div>

@@ -90,7 +90,7 @@ export function MobileMenu({ activeSection }) {
               </div>
               <motion.div
                 key="navmenu"
-                className="z-50 lg:hidden absolute bg-white right-0 top-0 min-w-xs max-w-xs h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar"
+                className="z-50 lg:hidden absolute bg-white right-0 top-0 min-w-[300px] h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar"
                 variants={animation}
                 initial="initial"
                 animate="animate"
@@ -119,7 +119,7 @@ export function MobileMenu({ activeSection }) {
 export function NavBar({ activeSection }) {
   return (
     <>
-      <div className="hidden lg:flex flex-col w-1/3 h-full bg-white justify-center items-center py-36 gap-16">
+      <div className="hidden lg:flex flex-col w-1/3 min-w-[300px] h-full bg-white justify-center items-center py-36 gap-16">
         <Avatar isFlipped={false} />
         <NavItems activeSection={activeSection} />
         <Footer />

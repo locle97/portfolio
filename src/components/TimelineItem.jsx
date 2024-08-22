@@ -5,12 +5,12 @@ function TimelineItem({ title, subtitle, description = "", period }) {
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
             <p className="text-black lg:text-lg">{title}</p>
-            <p className="text-sm lg:text-base">{subtitle}</p>
+            <p>{subtitle}</p>
           </div>
         </div>
         {
           period && (
-            <p className="absolute lg:flex right-[-25px] lg:right-0 top-0 text-xs lg:text-base w-max h-max py-2 px-4 text-white bg-gray-400">
+            <p className="absolute lg:flex right-[-25px] lg:right-0 top-0 w-max h-max py-2 px-4 text-white bg-gray-400">
               {period}
             </p>
           )
