@@ -11,7 +11,7 @@ function NextPageButton({ title, nextPage }) {
     <button onClick={navigateTo}
       className={"text-gray-900 absolute flex flex-col justify-center items-center bottom-[5px] animate-bounce"}>
       <p>{title}</p>
-      <i className="text-2xl fi fi-rs-angle-circle-down"></i>
+      <i className="text-2xl fi fi-rs-angle-circle-right"></i>
     </button>
   );
 }
