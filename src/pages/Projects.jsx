@@ -3,6 +3,47 @@ import Section from '../components/Section';
 import NextPageButton from '../components/NextPageButton';
 import TechStackItem from '../components/TechStackItem';
 
+import Slider from "react-slick";
+
+function ProjectThumbnail({ isUsingSlide, images, thumbnail, thumbnailAlt }) {
+  if (isUsingSlide) {
+    var settings = {
+      autoplay: true,
+      autoplaySpeed: 3000,
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+    return (
+      <div className="w-full">
+        <Slider {...settings}>
+          {
+            images && images.map((image, index) => {
+              return (
+                <img
+                  key={index}
+                  className="object-contain"
+                  src={image}
+                />
+              )
+            })
+          }
+        </Slider>
+      </div>
+    )
+  }
+  else
+    return (
+      <img
+        className="rounded-md shadow-md"
+        src={thumbnail}
+        alt={thumbnailAlt}
+      />
+    )
+}
+
 export function Projects({ projects }) {
   if (!projects) {
     return null;
@@ -20,14 +61,22 @@ export function Projects({ projects }) {
                 <div className="flex flex-col gap-8 w-full">
 
                   {/* Image */}
-                  <img
-                    className="rounded-md shadow-md"
-                    src={project.thumbnail}
-                    alt={project.thumbnailAlt}
-                  />
+                  <ProjectThumbnail isUsingSlide={project.isUsingSlide}
+                    images={project.images}
+                    thumbnail={project.thumbnail}
+                    thumbnailAlt={project.thumbnailAlt} />
 
                   {/* Buttons */}
                   <div className="button-group flex flex-col gap-2 sm:flex-row sm:gap-6 justify-center items-center">
+                    {
+                      project.livePreviewNotAvailable &&
+                      (
+                        <div
+                          className="w-max bg-white transistion-all delay-150 duration-300 button rounded-lg border-2 border-gray-800 text-gray-800 px-8 py-2 hover:bg-gray-100">
+                          Coming Soon!
+                        </div>
+                      )
+                    }
                     {
                       project.url &&
                       (
