@@ -1,4 +1,6 @@
-  // TODO: Implement downloadCV function
 export function downloadCV() {
-  console.log("Download CV function not implemented");
+  const resumeLink = 'Loc Le Phat - Simple Resume.pdf';
+  
+  // Open a new window with the PDF
+  window.open(resumeLink, '_blank');
 }

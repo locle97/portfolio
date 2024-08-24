@@ -1,4 +1,5 @@
 import AnimatedPage from "../components/AnimatedPage";
+import { Avatar } from "../components/Avatar";
 import NextPageButton from "../components/NextPageButton";
 
 export function Home({ name = "Loc Le", title = "Fullstack Developer" }) {
@@ -8,6 +9,9 @@ export function Home({ name = "Loc Le", title = "Fullstack Developer" }) {
         <NextPageButton title="Discover me!" nextPage="/about" />
 
         {/* TODO: Avatar on mobile layout */}
+        <div className="block lg:hidden">
+          <Avatar isFlipped={false} grayscale={false} />
+        </div>
         {/* Name and Title */}
         <h1 className="text-6xl text-black font-bold">{name}</h1>
         <p className="text-gray-400 text-lg">{title}</p>

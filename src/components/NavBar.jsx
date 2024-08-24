@@ -31,7 +31,7 @@ function MobileMenu() {
               </div>
               <motion.div
                 key="navmenu"
-                className="z-50 lg:hidden absolute bg-white right-0 top-0 min-w-[300px] h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar"
+                className="z-50 lg:hidden absolute bg-white right-0 top-0 min-w-[300px] w-[75%] h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar"
                 variants={animation}
                 initial="initial"
                 animate="animate"
