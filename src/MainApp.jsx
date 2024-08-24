@@ -13,13 +13,6 @@ const dataUrl = '/data.json';
 function MainApp() {
   const [data, setData] = useState({});
 
-  function navigateTo(sectionId) {
-    const sectionElm = document.getElementById(sectionId);
-    if (sectionElm && routing.map(t => t.id).includes(sectionId)) {
-      sectionElm.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   // Fetch data
   useEffect(() => {
     const fetchData = async () => {
@@ -38,7 +31,7 @@ function MainApp() {
         <NavBar />
         <div id="sections-container" className="w-full h-full flex flex-col overflow-y-auto scroll-smooth no-scrollbar">
           <Routes>
-            <Route path="/" element={<Home name={data?.about?.name} title={data.about?.title} navigateToNextSection={() => navigateTo("about")} />} />
+            <Route path="/" element={<Home name={data?.about?.name} title={data.about?.title} />} />
             <Route path="about" element={<About about={data.about} />} />
             <Route path="projects" element={<Projects projects={data.projects} />} />
             <Route path="contact" element={<Contact about={data.about} />} />
