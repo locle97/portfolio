@@ -29,6 +29,8 @@ jobs:
       - name: Set Web3Forms API Key
         run: echo "VITE_WEB3FORMS_API_KEY=${{ secrets.WEB3FORMS_API_KEY }}" >> $GITHUB_ENV
       - name: Build
+        env:
+          VITE_WEB3FORMS_API_KEY: ${{ secrets.WEB3FORMS_API_KEY }}
         run: npm run build
       - name: Build And Deploy
         id: builddeploy
