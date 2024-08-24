@@ -42,7 +42,7 @@ jobs:
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env: # Add environment variables here
-          VITE_WEB3FORMS_ACCESS_KEY: ${ env.VITE_WEB3FORMS_ACCESS_KEY }
+          VITE_WEB3FORMS_ACCESS_KEY: ${{ secrets.VITE_WEB3FORMS_ACCESS_KEY }}
           
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
