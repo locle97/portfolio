@@ -1,12 +1,11 @@
 
-// TODO: Modify social links
 export function Footer() {
   const year = new Date().getFullYear();
   const socials = [
-    { name: "Youtube", class: "fi fi-brands-youtube", link: "#" },
-    { name: "Facebook", class: "fi fi-brands-facebook", link: "#" },
-    { name: "Linkedin", class: "fi fi-brands-linkedin", link: "#" },
-    { name: "Github", class: "fi fi-brands-github", link: "#" }
+    { name: "Github", class: "fi fi-brands-github", link: "https://github.com/locle97" },
+    { name: "Linkedin", class: "fi fi-brands-linkedin", link: "https://www.linkedin.com/in/loc-le-phat-2b639020a/" },
+    { name: "Facebook", class: "fi fi-brands-facebook", link: "https://www.facebook.com/lpl212757" },
+    { name: "Youtube", class: "fi fi-brands-instagram", link: "https://www.instagram.com/rubber_.duck/" },
   ];
 
   return (
@@ -18,7 +17,7 @@ export function Footer() {
         </div>
         <div className="flex gap-4 justify-center items-center text-gray-500">
           {socials.map((social, index) => (
-            <a href={social.link} key={index} className="hover:text-black">
+            <a href={social.link} target="_blank" key={index} className="hover:text-black">
               <i key={index} className={social.class}></i>
             </a>
           ))}
