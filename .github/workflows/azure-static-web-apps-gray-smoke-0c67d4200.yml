@@ -26,11 +26,9 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
-      - name: Set Web3Forms API Key
-        run: echo "VITE_WEB3FORMS_API_KEY=${{ secrets.WEB3FORMS_API_KEY }}" >> $GITHUB_ENV
+      - name: Create .env file
+        run: echo "VITE_WEB3FORMS_API_KEY=${{ secrets.WEB3FORMS_API_KEY }}" > .env
       - name: Build
-        env:
-          VITE_WEB3FORMS_API_KEY: ${{ secrets.WEB3FORMS_API_KEY }}
         run: npm run build
       - name: Build And Deploy
         id: builddeploy
