@@ -16,6 +16,7 @@ export function Home({ name = "Loc Le", title = "Fullstack Developer" }) {
         {/* Name and Title */}
         <h1 className="text-6xl text-black font-bold">{name}</h1>
         <p className="text-gray-400 text-lg">{title}</p>
+
       </div>
     </AnimatedPage>
   );
