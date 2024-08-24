@@ -58,7 +58,7 @@ export function Projects({ projects }) {
           {
             projects.map((project, index) => {
               return <Section key={index} title={project.title}>
-                <div className="flex flex-col gap-8 w-full">
+                <div className="flex flex-col gap-8 w-full justify-center items-center">
 
                   {/* Image */}
                   <ProjectThumbnail isUsingSlide={project.isUsingSlide}

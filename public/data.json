@@ -155,7 +155,7 @@
         "images/duckeebs/duckeebs-result-2.jpeg"
       ],
       "description": "Duckeebs is an innovative web application designed to enhance the mechanical keyboard enthusiast experience. The platform allows users to visualize and customize their keyboards in real-time by trying out different keycaps on their own keyboard images.",
-      "techStack": ["react", "javascript", "html", "tailwindcss"]
+      "techStack": ["cSharp", "python", "angular", "html", "tailwindcss", "sql", "elasticsearch", "docker", "azure"]
     },
     {
       "title": "Simple Resume",
