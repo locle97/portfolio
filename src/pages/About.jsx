@@ -25,10 +25,23 @@ export function About({ about }) {
           <Timelines timelines={about.timelines} />
           <Achivements achivements={about.achivements} />
           <Skills skills={about.skills} />
+          <Quote quote={about.quote} />
         </div>
       </div>
     </AnimatedPage>
   );
+}
+
+function Quote() {
+  return <Section title="Favourite Quote">
+    <div className="flex flex-col gap-16 items-center">
+      <div className="relative flex flex-col gap-2 w-max max-w-full">
+        <i class="absolute -top-[10px] -left-[10px] lg:-left-[20px] fi fi-sr-quote-right"></i>
+        <p className="text-wrap text-center text-black">If you <span className="font-bold">can't explain</span> it to a six year old, you <span className="font-bold">don't understand</span> it yourself.</p>
+        <p className="text-wrap text-center">Albert Einstein</p>
+      </div>
+    </div>
+  </Section>
 }
 
 function Achivements({ achivements }) {
