@@ -49,6 +49,7 @@ npm run dev
 
 ## Roadmap
 
+- **Deployment documentation**: Add a section to guide about production deployment.
 - **Dark mode**: Currently, the website only supports light mode. Adding a dark mode option will enhance user experience by providing a more comfortable viewing option, especially in low-light environments.
 - **Blog Integration**: Add a blog section to share insights, tutorials, or project updates. This can also serve as a way to showcase your knowledge and keep the content dynamic.
 - **Portfolio Expansion**: Add more projects and case studies, including detailed descriptions, challenges faced, and the solutions implemented. This will showcase the breadth of your work and skills.
