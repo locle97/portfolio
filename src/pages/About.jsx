@@ -7,6 +7,7 @@ import { downloadCV } from "../utils/Utils"
 
 import './About.css';
 import AnimatedPage from "../components/AnimatedPage";
+import DynamicTitle from "../components/DynamicTitle";
 
 export function About({ about }) {
   if (!about) {
@@ -15,6 +16,7 @@ export function About({ about }) {
 
   return (
     <AnimatedPage>
+      <DynamicTitle title="Loc Le - About" />
       <div id="about" className="relative section flex flex-col justify-center items-center w-full h-max pt-20 pb-24 px-6 2xl:px-12 bg-white">
         <NextPageButton title="My Projects" nextPage="/projects" />
         <h2 className="text-4xl font-bold text-black">About</h2>

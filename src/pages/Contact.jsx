@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Section from '../components/Section';
 import Button from '../components/Button';
 import AnimatedPage from '../components/AnimatedPage';
+import DynamicTitle from '../components/DynamicTitle';
 
 const ContactFormStatus = {
   NONE: "",
@@ -43,6 +44,7 @@ export function Contact({ about }) {
 
   return (
     <AnimatedPage>
+      <DynamicTitle title="Loc Le - Contact" />
       <div id="contact" className="section flex flex-col justify-start items-center w-full h-full py-20 px-6 xl:px-12 bg-white">
         <h2 className="text-4xl font-bold text-black">Contact</h2>
         <div className="section flex flex-col w-full h-max pt-20 gap-16 bg-white">

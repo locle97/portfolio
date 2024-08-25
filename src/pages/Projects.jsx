@@ -4,6 +4,7 @@ import NextPageButton from '../components/NextPageButton';
 import TechStackItem from '../components/TechStackItem';
 
 import Slider from "react-slick";
+import DynamicTitle from '../components/DynamicTitle';
 
 function ProjectThumbnail({ isUsingSlide, images, thumbnail, thumbnailAlt }) {
   if (isUsingSlide) {
@@ -51,6 +52,7 @@ export function Projects({ projects }) {
 
   return (
     <AnimatedPage>
+      <DynamicTitle title="Loc Le - Projects" />
       <div id="projects" className="relative section flex flex-col justify-center items-center w-full h-max pt-20 pb-24 px-6 lg:px-12 bg-white">
         <NextPageButton title="Contact me" nextPage="/contact" />
         <h2 className="text-4xl font-bold text-black">Projects</h2>

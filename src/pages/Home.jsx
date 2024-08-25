@@ -1,10 +1,12 @@
 import AnimatedPage from "../components/AnimatedPage";
 import { Avatar } from "../components/Avatar";
+import DynamicTitle from "../components/DynamicTitle";
 import NextPageButton from "../components/NextPageButton";
 
 export function Home({ name = "Loc Le", title = "Fullstack Developer" }) {
   return (
     <AnimatedPage>
+      <DynamicTitle title="Loc Le" />
       <div id='home' className='relative min-w-full min-h-full bg-white flex flex-col gap-4 justify-center items-center'>
         <NextPageButton title="Discover me!" nextPage="/about" />
 
