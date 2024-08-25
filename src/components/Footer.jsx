@@ -2,7 +2,7 @@
 export function Footer() {
   const year = new Date().getFullYear();
   const socials = [
-    { name: "Github", class: "fi fi-brands-github", link: "https://github.com/locle97/portfolio" },
+    { name: "Github", class: "fi fi-brands-github", link: "https://github.com/locle97" },
     { name: "Linkedin", class: "fi fi-brands-linkedin", link: "https://www.linkedin.com/in/loc-le-phat-2b639020a/" },
     { name: "Facebook", class: "fi fi-brands-facebook", link: "https://www.facebook.com/lpl212757" },
     { name: "Youtube", class: "fi fi-brands-instagram", link: "https://www.instagram.com/rubber_.duck/" },
