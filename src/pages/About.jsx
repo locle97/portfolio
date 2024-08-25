@@ -202,7 +202,7 @@ function AboutMe({ about }) {
         <p>Website: <a href={about.website} className="text-black link-underline">{about.website}</a></p>
         <p>Freelance: {about.freelanceStatus}</p>
       </div>
-      <div>
+      <div id="download-cv-about">
         <Button onClick={downloadCV}>Download CV <i className="fi fi-sr-download"></i></Button>
       </div>
     </div>

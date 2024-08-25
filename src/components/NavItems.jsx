@@ -14,7 +14,7 @@ export function NavItems({ onLinkClick }) {
             <NavLink to={item.link}>{item.name}</NavLink>
           </li>
         ))}
-        <li className="hover:text-gray-700" onClick={downloadCV}>
+        <li id="download-cv-navbar" className="hover:text-gray-700" onClick={downloadCV}>
           <button>
             <span>Download CV</span>
             {/*<i className="fi fi-sr-download"></i>*/}
