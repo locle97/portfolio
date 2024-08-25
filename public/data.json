@@ -167,6 +167,17 @@
       "url": "https://simpleresume.net/",
       "github": "https://github.com/locle97/SimpleResume",
       "techStack": ["react", "javascript", "html", "tailwindcss"]
+    },
+    {
+      "title": "My Portfolio Website",
+      "isUsingSlide": false,
+      "images": [],
+      "thumbnail": "gif/portfolio-demo.gif",
+      "thumbnailAlt": "My Porfolio Website Screenshot",
+      "description": "I designed and developed this portfolio website using HTML, TailwindCSS, and React to create a clean, modern, and responsive user interface. The site showcases my skills as a Fullstack Developer, providing an easy-to-navigate experience with a focus on simplicity and elegance. The responsive design ensures that the website is accessible on various devices, offering a seamless experience whether on desktop or mobile. This project demonstrates my ability to combine design and development to build professional web applications.",
+      "url": "https://locle.dev/",
+      "github": "https://github.com/locle97/portfolio",
+      "techStack": ["react", "javascript", "html", "tailwindcss"]
     }
   ]
 }

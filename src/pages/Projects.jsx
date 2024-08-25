@@ -15,7 +15,7 @@ function ProjectThumbnail({ isUsingSlide, images, thumbnail, thumbnailAlt }) {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1,
+      slidesToScroll: 1
     };
     return (
       <div className="w-full">
@@ -25,7 +25,7 @@ function ProjectThumbnail({ isUsingSlide, images, thumbnail, thumbnailAlt }) {
               return (
                 <img
                   key={index}
-                  className="object-contain"
+                  className="object-contain max-h-[50vh]"
                   src={image}
                 />
               )
@@ -38,7 +38,7 @@ function ProjectThumbnail({ isUsingSlide, images, thumbnail, thumbnailAlt }) {
   else
     return (
       <img
-        className="rounded-md shadow-md"
+        className="rounded-md shadow-md max-h-[50vh]"
         src={thumbnail}
         alt={thumbnailAlt}
       />
