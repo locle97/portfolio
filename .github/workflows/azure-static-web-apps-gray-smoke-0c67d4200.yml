@@ -24,11 +24,10 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - uses: cschleiden/replace-tokens@v1
-        with:
-          files: '["**/.env"]'
-        env:
-          WEB3FORMS_API_KEY: ${{ secrets.VITE_WEB3FORMS_API_KEY }}
+          
+      - name: Find and Replace API Keys
+        run: find *.env -type f -exec sed -i ''s/#{WEB3FORMS_API_KEY}#/${{ secrets.VITE_WEB3FORMS_API_KEY }}/g'' {} \;
+        
       - name: Install dependencies
         run: npm ci
       - name: Build
