@@ -27,7 +27,8 @@ jobs:
           
       - name: Find and Replace API Keys
         run: find .env -type f -exec sed -i ''s/#{WEB3FORMS_API_KEY}#/${{ secrets.VITE_WEB3FORMS_API_KEY }}/g'' {} \;
-        
+      - name: Bash - Show ENV Contents
+        run: cat .env
       - name: Install dependencies
         run: npm ci
       - name: Build
