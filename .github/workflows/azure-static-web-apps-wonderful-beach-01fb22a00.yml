@@ -19,6 +19,21 @@ jobs:
         with:
           submodules: true
           lfs: false
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          
+      - name: Find and Replace API Keys
+        run: find .env -type f -exec sed -i ''s/#{WEB3FORMS_API_KEY}#/${{ secrets.WEB3FORMS_API_KEY }}/g'' {} \;
+      - name: Bash - Show ENV Contents
+        run: cat .env
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
