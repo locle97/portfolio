@@ -40,6 +40,37 @@ Start the development server and run the project locally
 npm run dev
 ```
 
+### Deployment
+
+1. Setup environment variables:
+
+- List of variables:
+    - VITE_WEB3FORMS_ACCESS_KEY: this access key is used to send email from contact page. You can get it from https://web3forms.com/#start
+
+- If you're deploying on VMs, modify the `.env` file to replace your access key
+- If you're deploying via CI/CD pipeline (github actions, Azure,...), find a way to replace token with your secret key setup.
+    - Github actions: Setup environment secrets -> put step below into your workflow to replace token.
+    ```
+    - name: Find and Replace API Keys
+    run: find .env -type f -exec sed -i ''s/#{WEB3FORMS_API_KEY}#/${{ secrets.WEB3FORMS_API_KEY }}/g'' {} \;
+    ```
+
+2. Install dependencies
+
+Install the necessary packages using npm:
+```
+npm install
+```
+
+3. Build
+
+Build the project and publish to folder dist
+```
+npm run build
+```
+
+4. Copy dist to wwwroot folder
+
 ## Built with
 
 - [React](https://react.dev/)
@@ -49,7 +80,6 @@ npm run dev
 
 ## Roadmap
 
-- **Deployment documentation**: Add a section to guide about production deployment.
 - **Dark mode**: Currently, the website only supports light mode. Adding a dark mode option will enhance user experience by providing a more comfortable viewing option, especially in low-light environments.
 - **Blog Integration**: Add a blog section to share insights, tutorials, or project updates. This can also serve as a way to showcase your knowledge and keep the content dynamic.
 - **Portfolio Expansion**: Add more projects and case studies, including detailed descriptions, challenges faced, and the solutions implemented. This will showcase the breadth of your work and skills.
