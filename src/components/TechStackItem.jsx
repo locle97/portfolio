@@ -30,6 +30,11 @@ function TechStackItem({ techCode }) {
       ref: 'https://angular.io/',
       alt: 'Angular'
     },
+    'nextjs': {
+      logo: 'images/logo/nextjs.svg',
+      ref: 'https://nextjs.org/',
+      alt: 'NextJS'
+    },
     'azure': {
       logo: 'images/logo/azure.svg',
       ref: 'https://azure.microsoft.com/en-us/',

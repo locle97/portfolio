@@ -85,7 +85,7 @@ export function Projects({ projects }) {
                         <button
                           onClick={() => window.open(project.url)}
                           className="w-max bg-white transistion-all delay-150 duration-300 button rounded-lg border-2 border-gray-800 text-gray-800 px-8 py-2 hover:scale-125">
-                          Live Demo <i className="fi fi-rr-arrow-up-right-from-square"></i>
+                          Live Preview <i className="fi fi-rr-arrow-up-right-from-square"></i>
                         </button>
                       )
                     }
