@@ -171,6 +171,25 @@
             ]
         },
         {
+            "title": "Keeb Switches",
+            "isUsingSlide": false,
+            "url": "https://keeb-switches-client-dfacake6d6e6bggw.southeastasia-01.azurewebsites.net/",
+            "github": "https://github.com/locle97/clean-graphql",
+            "images": [],
+            "thumbnail": "/images/keeb-switches/keeb-switches-screenshot.png",
+            "thumbnailAlt": "Keeb Switches Screenshot",
+            "description": "As a mechanical keyboard enthusiast and a software developer, I built Keeb Switches—a minimalist web app that helps users explore and search for their favorite switches.",
+            "techStack": [
+                "cSharp",
+                "graphql",
+                "mongodb",
+                "vuejs",
+                "tailwindcss",
+                "docker",
+                "azure"
+            ]
+        },
+        {
             "title": "Simple Resume",
             "isUsingSlide": false,
             "images": [],
