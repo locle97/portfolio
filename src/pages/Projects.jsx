@@ -82,21 +82,23 @@ export function Projects({ projects }) {
                     {
                       project.url &&
                       (
-                        <button
-                          onClick={() => window.open(project.url)}
+                        <a
+                          target='_blank'
+                          href={project.url}
                           className="w-max bg-white transistion-all delay-150 duration-300 button rounded-lg border-2 border-gray-800 text-gray-800 px-8 py-2 hover:scale-125">
                           Live Preview <i className="fi fi-rr-arrow-up-right-from-square"></i>
-                        </button>
+                        </a>
                       )
                     }
                     {
                       project.github &&
                       (
-                        <button
-                          onClick={() => window.open(project.github)}
+                        <a
+                          target='_blank'
+                          href={project.github}
                           className="w-max transistion-all delay-150 duration-300 button rounded-lg bg-gray-800 text-gray-200 px-8 py-2 hover:scale-125">
                           Github Code <i className="fi fi-brands-github"></i>
-                        </button>
+                        </a>
                       )
                     }
                   </div>
