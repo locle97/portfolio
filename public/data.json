@@ -7,8 +7,8 @@
     },
     "about": {
         "name": "Loc Le",
-        "title": "Fullstack Developer",
-        "introduction": "A highly motivated and results-driven software engineer with 6 years of experience in C# and .Net Core. Graduated from Ho Chi Minh University of Science with a strong academic record. Currently serving as a Senior Software Engineer at Nashtech, where I have been recognized as the Top Excellent Developer in 2020 and Developer of the Year in 2022. Possess a strong ability to analyze and solve complex problems effectively. Committed to delivering high-quality software solutions to meet customer needs and exceed expectations.",
+        "title": "Senior Fullstack Developer",
+        "introduction": "A highly motivated and results-driven software engineer with 7 years of experience in C# and .Net Core. Graduated from Ho Chi Minh University of Science with a strong academic record. Currently serving as a Senior Software Engineer at Nashtech, where I have been recognized as the Top Excellent Developer in 2020 and Developer of the Year in 2022. Possess a strong ability to analyze and solve complex problems effectively. Committed to delivering high-quality software solutions to meet customer needs and exceed expectations.",
         "imageUrl": "../assets/images/avatar.jpeg",
         "fullName": "Le Phat Loc",
         "email": "lpl212757@gmail.com",
@@ -53,9 +53,14 @@
             ],
             "workExperiences": [
                 {
+                    "title": "CoverGo",
+                    "subtitle": "Senior FullStack Engineer",
+                    "period": "Jun 2025-now"
+                },
+                {
                     "title": "NashTech",
                     "subtitle": "Senior Software Engineer",
-                    "period": "2021-now"
+                    "period": "2021-Jun 2025"
                 },
                 {
                     "title": "NashTech",
